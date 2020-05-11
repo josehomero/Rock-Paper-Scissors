@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Homero's Rock-Paper-Scissors Game</title>
     <style>
-        body{
+        body {
             height: 600px;
             background-color: blue;
             background-image: linear-gradient(to bottom right, blue, yellow);
@@ -19,9 +20,10 @@
 
         p {
             text-align: center;
+            font-size: 150%;
         }
 
-        #buttons{
+        #buttons {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -33,21 +35,32 @@
         }
 
         #rock {
-            background-color:aquamarine;
-            border:none;
+            background-color: blue;
+            border: none;
         }
 
+        #paper {
+            background-color: cadetblue;
+        }
+
+        #scissors {
+            background-color: yellow;
+        }
     </style>
 </head>
+
 <body>
     <h1>Rock-Paper-Scissors!</h1>
 
     <div id="buttons">
-        <button><img id="rock" class="picture-buttons" src="images/rock2.png.png" alt="rock" width="200" height="200"></button>
-        <button><img id="paper" class="picture-buttons" src="images/paper.png.svg" alt="paper" width="200" height="200"></button>
-        <button><img id="scissors" class="picture-buttons" src="images/scissors.png.svg" alt="scissors" width="200" height="200"></button>
+        <button><img id="rock" class="picture-buttons" src="images/rock2.png.png" alt="rock" width="200"
+                height="200"></button>
+        <button><img id="paper" class="picture-buttons" src="images/paper.png.svg" alt="paper" width="200"
+                height="200"></button>
+        <button><img id="scissors" class="picture-buttons" src="images/scissors.png.svg" alt="scissors" width="200"
+                height="200"></button>
     </div>
-    
+
     <div id="text-div" width="200" height="200"></div>
 
     <h2>Your Score!</h2>
@@ -55,7 +68,7 @@
 
     <h2>Computer Score!</h2>
     <p id="computer-score" value="0"></p>
-   
+
     <script src='script.js'></script>
 </body>
 
