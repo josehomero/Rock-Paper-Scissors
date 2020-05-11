@@ -3,15 +3,50 @@
 <head>
     <title>Homero's Rock-Paper-Scissors Game</title>
     <style>
+        body{
+            height: 600px;
+            background-color: blue;
+            background-image: linear-gradient(to bottom right, blue, yellow);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        #buttons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #text-div {
+            text-align: center;
+            font-size: 150%;
+        }
+
+        #rock {
+            background-color:aquamarine;
+            border:none;
+        }
 
     </style>
 </head>
 <body>
     <h1>Rock-Paper-Scissors!</h1>
 
-    <button><img id="rock" class="picture-buttons" src="images/rock2.png.png" alt="rock" width="200" height="200"></button>
-    <button><img id="paper" class="picture-buttons" src="images/paper.png.svg" alt="paper" width="200" height="200"></button>
-    <button><img id="scissors" class="picture-buttons" src="images/scissors.png.svg" alt="scissors" width="200" height="200"></button>
+    <div id="buttons">
+        <button><img id="rock" class="picture-buttons" src="images/rock2.png.png" alt="rock" width="200" height="200"></button>
+        <button><img id="paper" class="picture-buttons" src="images/paper.png.svg" alt="paper" width="200" height="200"></button>
+        <button><img id="scissors" class="picture-buttons" src="images/scissors.png.svg" alt="scissors" width="200" height="200"></button>
+    </div>
     
     <div id="text-div" width="200" height="200"></div>
 
