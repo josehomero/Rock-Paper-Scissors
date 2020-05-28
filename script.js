@@ -1,54 +1,55 @@
-const opponentResult = ['Computer chooses Rock', 'Computer chooses Paper', 'Computer chooses Scissors'];
+const ROCK = 'Rock';
+const SCISSORS = 'Scissors';
+const PAPER = 'Paper';
+
 let userWins = 0;
 let computerWins = 0;
 
-let yourScore = document.getElementById('your-score');
 function userWinsTheGame() {
     userWins += 1
+    let yourScore = document.getElementById('your-score');
     yourScore.textContent = userWins;
 }
 
-let computerScore = document.getElementById('computer-score');
 function computerWinsTheGame() {
     computerWins += 1;
+    let computerScore = document.getElementById('computer-score');
     computerScore.textContent = computerWins;
 }
-
-const textDiv = document.getElementById('text-div');
 
 const pictureButtons = document.querySelectorAll('.picture-buttons');
 pictureButtons.forEach(button => {
     button.addEventListener('click', e => {
-        textDiv.textContent = opponentResult[Math.floor(Math.random() * 3)];
+        const textDiv = document.getElementById('text-div');
+        const opponentResult = [ROCK, PAPER, SCISSORS];
+        const computerChoice = opponentResult[Math.floor(Math.random() * 3)];
+        textDiv.textContent = 'Computer chooses ' + computerChoice;
 
-        if (e.target.id === 'rock' && textDiv.textContent === 'Computer chooses Rock') {
-            return textDiv.textContent += ": It's a DRAW!";
-        } else if (e.target.id === 'rock' && textDiv.textContent === 'Computer chooses Scissors') {
-            userWinsTheGame()
-            return textDiv.textContent += ": YOU WIN!";
-        } else if (e.target.id === 'rock' && textDiv.textContent === 'Computer chooses Paper') {
-            computerWinsTheGame();
-            return textDiv.textContent += ": You lose!";
+        const playerChoice = e.target.id.toUpperCase();
+
+        if (playerChoice === computerChoice.toUpperCase()) {
+            textDiv.textContent += ": It's a DRAW!";
+            return;
         }
 
-        if (e.target.id === 'scissors' && textDiv.textContent === 'Computer chooses Rock') {
-            computerWinsTheGame();
-            return textDiv.textContent += " : You lose!";
-        } else if (e.target.id === 'scissors' && textDiv.textContent === 'Computer chooses Scissors') {
-            return textDiv.textContent += ": It's a DRAW!";
-        } else if (e.target.id === 'scissors' && textDiv.textContent === 'Computer chooses Paper') {
-            userWinsTheGame();
-            return textDiv.textContent += ": YOU WIN!";
+        const rockBeatsScissors = playerChoice === ROCK.toUpperCase() && computerChoice === SCISSORS.toUpperCase()
+        const scissorsBeatsPaper = playerChoice === SCISSORS.toUpperCase() && computerChoice === PAPER.toUpperCase()
+        const paperBeatsRock = playerChoice === PAPER.toUpperCase() && computerChoice === ROCK.toUpperCase()
+
+        if (rockBeatsScissors || scissorsBeatsPaper || paperBeatsRock) {
+            userWinsTheGame()
+            textDiv.textContent += ": YOU WIN!";
+            return;
         }
 
-        if (e.target.id === 'paper' && textDiv.textContent === 'Computer chooses Rock') {
-            userWinsTheGame()
-            return textDiv.textContent += ": YOU WIN!";
-        } else if (e.target.id === 'paper' && textDiv.textContent === 'Computer chooses Paper') {
-            return textDiv.textContent += ": It's a DRAW!";
-        } else if (e.target.id === 'paper' && textDiv.textContent === 'Computer chooses Scissors') {
+        const rockLosesToPaper = playerChoice === ROCK.toUpperCase() && computerChoice === PAPER.toUpperCase() 
+        const scissorsLosesToRock = playerChoice === SCISSORS.toUpperCase() && computerChoice === ROCK.toUpperCase()
+        const paperLosesToScissors = playerChoice === PAPER.toUpperCase() && computerChoice === SCISSORS.toUpperCase()
+
+        if(rockLosesToPaper || scissorsLosesToRock || paperLosesToScissors) {
             computerWinsTheGame();
-            return textDiv.textContent += " : You lose!";
+            textDiv.textContent += ": You lose!";
+            return;
         }
     })
 })

@@ -10,9 +10,8 @@ Check it out https://josehomero.github.io/Rock-Paper-Scissors/
 
 ## Summary
 
-This project solitified things I have learned with JacaScript, specifically targeting elements within an if statement. This project also gave me a taste of implementing CSS and styling.
+This project solidified things I have learned with JacaScript, specifically targeting elements within an if statement. This project also gave me a taste of implementing CSS and styling.
 
-It didn't take as long as I thought it would but it showed me how much I've started to retain in my journey as a Software-Developer.
 
 ## Author
 

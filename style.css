@@ -1,0 +1,51 @@
+body {
+    height: 600px;
+    background-color: blue;
+    background-image: linear-gradient(to bottom right, blue, yellow);
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 150%;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#text-div {
+    text-align: center;
+    font-size: 150%;
+}
+
+#rock {
+    background-color: blue;
+    border: none;
+}
+
+#paper {
+    background-color: cadetblue;
+}
+
+#scissors {
+    background-color: yellow;
+}
+
+.picture-buttons:hover {
+    cursor: pointer;
+}
+
+.picture-buttons {
+    margin-left: 10px;
+    margin-right: 10px;
+}
