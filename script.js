@@ -40,7 +40,6 @@ pictureButtons.forEach(button => {
 
         if (rockBeatsScissors || scissorsBeatsPaper || paperBeatsRock) {
             userWinsTheGame()
-            debugger;
             textDiv.textContent += ": YOU WIN!";
             return;
         }
